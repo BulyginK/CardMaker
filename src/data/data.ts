@@ -114,7 +114,7 @@ const text: Array<TextBlockType> = [
 
 const image: Array<ImageBlockType> = [
   {
-    id: 'id001',
+    id: 'id011',
     size: {
       height: 250,
       width: 350,
@@ -130,7 +130,7 @@ const image: Array<ImageBlockType> = [
     data: 'https://avatars.dzeninfra.ru/get-zen_doc/8265783/pub_64129fd7b90bf0400fd7821d_6412a2113af31b29d1b02fef/scale_1200',
   },
   {
-    id: 'id002',
+    id: 'id012',
     size: {
       height: 200,
       width: 200,
@@ -149,7 +149,7 @@ const image: Array<ImageBlockType> = [
 
 const artObject: Array<ArtObjectType> = [
   {
-    id: 'id003',
+    id: 'id031',
     size: {
       height: 0,
       width: 0,

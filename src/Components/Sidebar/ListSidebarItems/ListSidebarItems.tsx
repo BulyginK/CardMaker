@@ -1,10 +1,7 @@
-import Popup from 'reactjs-popup';
-//import { useState } from "react";
-import { SidebarItems } from "../../../type/type";
+import {SidebarItem, SidebarItems} from "../../../type/type";
 import css from "./ListSidebarItems.module.css";
-import SidebarItemOption from "../../SidebarItemOption/SidebarItemOption";
 
-const ListSidebarItems = ({ sidebarItems }: SidebarItems) => {
+/*const ListSidebarItems = ({ sidebarItems }: SidebarItems) => {
     return (
         <ul className={css.listwWrapper}>
             {sidebarItems.map(item => (
@@ -18,6 +15,22 @@ const ListSidebarItems = ({ sidebarItems }: SidebarItems) => {
                 </Popup>
             ))}
         </ul>
+    );
+}*/
+
+type sidebarItemsProps = {
+    sidebarItems: Array<SidebarItem>;
+    itemAlt: (e: any) => string
+}
+
+const ListSidebarItems = ({ sidebarItems, itemAlt}: sidebarItemsProps) => {
+    return (
+        <ul className={css.wrapper}>{sidebarItems.map(item => (
+            <li key={item.id} className={css.item} onClick={itemAlt}>
+                <img className={css.img} src={item.img} alt={item.name} />
+                <p className={css.name}>{item.name}</p>
+            </li>
+        ))}</ul>
     );
 }
 

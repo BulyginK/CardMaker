@@ -1,10 +1,10 @@
-.listwWrapper {
+.wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.listwWrapper_item {
+.item {
   margin-bottom: 10px;
   text-align: center;
 }

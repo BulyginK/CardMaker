@@ -63,7 +63,7 @@ type BlocksType = {
   canvasBlocks: Array<TextBlockType | ImageBlockType | ArtObjectType>;
 }
 
-type Сanvas = {
+type Canvas = {
   blocks: BlocksType;
   size: Size;
   background: Background;
@@ -71,7 +71,7 @@ type Сanvas = {
 
 type Template = {
   id: string;
-  objects: Сanvas;
+  objects: Canvas;
 };
 
 // type History = {
@@ -93,7 +93,7 @@ type Editor = {
   //   history: History;
   sidebarItems: SidebarItems;
   template: Template;
-  canvas: Сanvas;
+  canvas: Canvas;
   selectedObjectId: string[];
 }
 
@@ -102,7 +102,7 @@ export type {
   SidebarItems,
   SidebarItem,
   Template,
-  Сanvas,
+  Canvas,
   BlocksType,
   TextBlockType,
   ImageBlockType,

@@ -5,10 +5,18 @@ import TemplateOptions from './TemplateOptions/TemplateOptions';
 import TextOptions from './TextOptions/TextOptions';
 import ImageOptions from './ImageOptions/ImageOptions';
 import ArtObjectOptions from "./ArtObjectOptions/ArtObjectOptions";
+import {SidebarItem} from "../../type/type";
 
+type itemsProps = {
+    itemAlt: string;
+    toggleFIeldset: boolean
+}
 
-function SidebarItemOption(itemClick: any ) {
-        switch (itemClick.itemClick) {
+function SidebarItemOption({ itemAlt, toggleFIeldset}: itemsProps) {
+    console.log(itemAlt)
+    console.log(toggleFIeldset)
+
+        switch (itemAlt) {
             case "Холст":
                 return (
                     <CanvasOptions />
@@ -28,7 +36,7 @@ function SidebarItemOption(itemClick: any ) {
             case "АртОбъект":
                 return (
                     <ArtObjectOptions />
-                );    
+                );
 
             default:
                 return null;
