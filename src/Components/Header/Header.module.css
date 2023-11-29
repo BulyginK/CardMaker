@@ -24,3 +24,7 @@
     border-right: #000000;
     align-items: center;
 }
+
+.export_button {
+    margin-left: auto;
+}

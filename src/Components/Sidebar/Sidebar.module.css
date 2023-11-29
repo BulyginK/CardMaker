@@ -1,3 +1,6 @@
+.sidebar {
+    display: flex;
+}
 .wrapper {
     width: 70px;
     height: 90vh;
@@ -5,4 +8,25 @@
     margin: 5px;
     border-radius: 5px;
     background-color: #ffffff;
+}
+
+.wrapper_items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.img {
+    width: 35px;
+    color: #787878;
+}
+
+.name {
+    align-items: center;
+    font-size: 12px;
 }

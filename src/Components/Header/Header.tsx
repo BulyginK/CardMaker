@@ -26,7 +26,7 @@ function Header() {
             <h3 className={css.logo}>
                 Card Maker
             </h3>
-            <button onClick={saveJsonObjToFile}>Экспорт</button>
+            <button className={css.export_button} onClick={saveJsonObjToFile}>Экспорт</button>
         </div>
     );
 }
