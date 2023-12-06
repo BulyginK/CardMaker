@@ -5,14 +5,15 @@ import SidebarItems from "../../data/SidebarItems";
 import SidebarItemOption from "./SidebarItemOption/SidebarItemOption";
 //import {SidebarItem} from "../../type/type";
 
-let clickElem: string = '';
+//let clickElem: string = '';
 const Sidebar = () => {
     const [isShown, setIsShown] = useState(false);
+    const [clickElem, setClickElem] = useState('');
 
     const getItemAlt = (e: any) => {
-        e.preventDefault()
-        setIsShown(!isShown)
-        clickElem = e.target.alt;
+        e.preventDefault();
+        e.target.alt != clickElem ? setIsShown(true) : setIsShown(!isShown);
+        setClickElem(e.target.alt)
     };
 
     let sidebarItems = SidebarItems.map(item => (

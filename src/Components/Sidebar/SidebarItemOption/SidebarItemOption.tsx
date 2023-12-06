@@ -12,7 +12,7 @@ type itemsProps = {
     item: string,
 }
 function SidebarItemOption(props: itemsProps) {
-        switch (props.item) {
+    switch (props.item) {
             case "Холст":
                 return (
                     <CanvasOptions />
