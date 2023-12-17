@@ -1,9 +1,8 @@
 import {
   Template,
-  BlocksType,
   TextBlockType,
   ImageBlockType,
-  ArtObjectType,
+  ArtObjectType, Editor,
 } from '../type/type'
 
 const text: Array<TextBlockType> = [
@@ -175,14 +174,11 @@ const artObject: Array<ArtObjectType> = [
   }
 ]
 
-const canvasBlocks: BlocksType = {
-  canvasBlocks: [text[1], image[0], image[1], artObject[0]],
-}
-
 const template: Template = {
   id: "id000",
-  objects: {
-    blocks: canvasBlocks,
+  canvas: {
+    id: "0001",
+    blocks: [text[1], image[0], image[1], artObject[0]],
     size: {
       width: 800,
       height: 600,
@@ -194,4 +190,9 @@ const template: Template = {
   },
 }
 
-export default template;
+const editor: Editor = {
+  template: template,
+  selectedObjectId: [],
+}
+
+export default editor;
