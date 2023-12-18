@@ -59,6 +59,10 @@ type ArtObjectType = Block & {
   data: string;
 }
 
+type BlocksType = {
+  blocksType: Array<TextBlockType | ImageBlockType | ArtObjectType>;
+}
+
 type Canvas = {
   id: string;
   size: Size;
@@ -99,6 +103,7 @@ export type {
   SidebarItem,
   Template,
   Canvas,
+  BlocksType,
   TextBlockType,
   ImageBlockType,
   ArtObjectType,

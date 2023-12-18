@@ -31,7 +31,6 @@ const Sidebar = () => {
             </div>
             {isShown &&
                 <SidebarItemOption
-                    isShown={isShown}
                     item={clickElem}/>}
         </div>
 

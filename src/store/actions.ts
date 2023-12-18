@@ -1,22 +1,19 @@
-import {Template} from "../type/type";
+import {Editor} from "../type/type";
+import { CanvasActionType } from "./typeActions";
 
-enum CanvasActionType {
-    CREATE_CANVAS = 'CREATE_CANVAS',
-    CLEAR_CANVAS = 'CLEAR_CANVAS',
-}
 
-export const createCanvas = (newTemplate: Template) => {
+
+export const createCanvas = (payload: Editor) => {
     return {
         type: CanvasActionType.CREATE_CANVAS,
-        payload: newTemplate
+        payload: payload
     }
-
 }
 
-export const clearCanvas = (newTemplate: Template) => {
+export const clearCanvas = (payload: Editor) => {
     return {
         type: CanvasActionType.CLEAR_CANVAS,
-        payload: newTemplate
+        payload: payload
     }
 
 }

@@ -2,7 +2,7 @@ import {
   Template,
   TextBlockType,
   ImageBlockType,
-  ArtObjectType, Editor,
+  ArtObjectType, Editor, BlocksType,
 } from '../type/type'
 
 const text: Array<TextBlockType> = [
@@ -178,7 +178,12 @@ const template: Template = {
   id: "id000",
   canvas: {
     id: "0001",
-    blocks: [text[1], image[0], image[1], artObject[0]],
+    blocks: [
+      text[1],
+      image[0],
+      image[1],
+      artObject[0],
+    ],
     size: {
       width: 800,
       height: 600,

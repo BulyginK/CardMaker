@@ -1,29 +1,30 @@
 import React from "react";
 import css from "./ListCanvasBlocks.module.css";
-import { BlocksType } from "../../../type/type";
-import dbCanvas from "../../../data/data";
+import {useAppSelector} from "../../../data/hooks";
 
-const ListCanvasBlocks = ({ canvasBlocks }: BlocksType) => {
+const ListCanvasBlocks = () => {
+  const blocks = useAppSelector((state) => state.canvas);
+
   return (
     <ul className={css.listwWrapper}>
-      {canvasBlocks.map((block) => {
-        switch (block.type) {
-          case "image":
-              return (
-                <p key={block.id} >{block.type} {block.id}</p>
-              );
-          case "text":
-              return (
-                <p key={block.id} >{block.type} {block.id} </p>
-              );
-          case "art":
-            return (
-              <p key={block.id} >{block.type} {block.id}</p>
-            );
-          default:
-              return null;
-      }
-      })}
+      {/*{canvasBlocks.blocksType.map((block) => {*/}
+      {/*  switch (block.type) {*/}
+      {/*    case "image":*/}
+      {/*        return (*/}
+      {/*          <p key={block.id} >{block.type} {block.id}</p>*/}
+      {/*        );*/}
+      {/*    case "text":*/}
+      {/*        return (*/}
+      {/*          <p key={block.id} >{block.type} {block.id} </p>*/}
+      {/*        );*/}
+      {/*    case "art":*/}
+      {/*      return (*/}
+      {/*        <p key={block.id} >{block.type} {block.id}</p>*/}
+      {/*      );*/}
+      {/*    default:*/}
+      {/*        return null;*/}
+      {/*}*/}
+      {/*})}*/}
     </ul>
   );
 }

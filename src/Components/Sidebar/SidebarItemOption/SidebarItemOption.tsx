@@ -8,7 +8,6 @@ import ArtObjectOptions from "./ArtObjectOptions/ArtObjectOptions";
 import {SidebarItem} from "../../../type/type";
 
 type itemsProps = {
-    isShown: boolean,
     item: string,
 }
 function SidebarItemOption(props: itemsProps) {
