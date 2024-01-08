@@ -1,38 +1,21 @@
 import {combineReducers} from "redux";
-import {createCanvas, clearCanvas} from './actions'
+import {createCanvas} from '../actions'
 import {Editor} from "../type/type";
-// import editor from "../data/data";
-import Action from "./typeActions"
+import { CanvasActionType, Action} from "./typeActions"
+import {clearTemplate, newTemplate} from "../data/data";
+import canvas from "../Components/Canvas/Canvas";
 
 
-let editor: Editor = {
-    template: {
-        id: "id000",
-        canvas: {
-            id: "0001",
-            blocks: [],
-            size: {
-                width: 800,
-                height: 600,
-            },
-            background: {
-                type: 'color',
-                data: '#ffffff',
-            },
-        },
-    },
-    selectedObjectId: []
+const initialState: Editor = {
+    template: clearTemplate,
+    selectedObjectId: [],
 }
-
-let initialState = {
-    editor: {...editor}
-}
-const canvasReducer = (state = initialState, action: Action) => {
+const canvasReducer = (state: Editor = initialState, action: Action): Editor => {
     switch (action.type) {
-        case 'CREATE_CANVAS':
-            const newTemplate = (action as typeCreateCanvas).payload;
+        case CanvasActionType.CREATE_CANVAS:
             return {
-                editor: createCanvas(state.editor, newTemplate)
+                ...state,
+                template: action.payload,
             }
         default:
             return state
@@ -42,4 +25,4 @@ const canvasReducer = (state = initialState, action: Action) => {
 const rootReducer = combineReducers({
     canvas: canvasReducer,
 })
-export default rootReducer
+export {rootReducer}

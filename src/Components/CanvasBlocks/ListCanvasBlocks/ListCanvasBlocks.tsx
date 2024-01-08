@@ -3,7 +3,7 @@ import css from "./ListCanvasBlocks.module.css";
 import {useAppSelector} from "../../../data/hooks";
 
 const ListCanvasBlocks = () => {
-  const blocks = useAppSelector((state) => state.canvas);
+  //const blocks = useAppSelector((state) => state.canvas);
 
   return (
     <ul className={css.listwWrapper}>

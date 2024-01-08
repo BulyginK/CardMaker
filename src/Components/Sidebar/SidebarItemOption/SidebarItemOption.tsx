@@ -7,14 +7,15 @@ import ImageOptions from './ImageOptions/ImageOptions';
 import ArtObjectOptions from "./ArtObjectOptions/ArtObjectOptions";
 import {SidebarItem} from "../../../type/type";
 
-type itemsProps = {
+type SidebarItemProps = {
     item: string,
+    canvasHandler: () => void;
 }
-function SidebarItemOption(props: itemsProps) {
+function SidebarItemOption(props: SidebarItemProps) {
     switch (props.item) {
             case "Холст":
                 return (
-                    <CanvasOptions />
+                    <CanvasOptions canvasHandler={canvasHandler}/>
                 );
             case "Шаблоны":
                 return (

@@ -1,13 +1,15 @@
 import React from "react";
 import css from "./Canvas.module.css";
-import dbCanvas from "../../data/data";
+//import dbCanvas from "../../data/data";
 import TextBlock from "./TextBlock/TextBlock";
 import ImageBlock from "./ImageBlock/ImageBlock";
 import ArtObject from "./ArtObject/ArtObject";
+import {Editor} from "../../type/type";
+import {connect} from "react-redux";
 
 function Canvas() {
     return (
-        <div className={css.wrapper} style={dbCanvas.template.canvas.size}>
+        <div className={css.wrapper}>
             <div>
                 {/*{*/}
                 {/*    //isSelected &&*/}
@@ -72,4 +74,11 @@ function Canvas() {
     );
 }
 
-export default Canvas;
+function mapStateToProps(state: Editor) {
+    return {
+        size: state.template.canvas.size
+    }
+}
+
+//export default Canvas;
+export default connect(mapStateToProps)(Canvas);

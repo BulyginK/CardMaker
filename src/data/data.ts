@@ -195,9 +195,42 @@ const template: Template = {
   },
 }
 
+const newTemplate: Template = {
+  id: "id001",
+  canvas: {
+    id: "id002",
+    blocks: [],
+    size: {
+      width: 800,
+      height: 600,
+    },
+    background: {
+      type: 'color',
+      data: '#ffffff',
+    },
+  },
+}
+
 const editor: Editor = {
   template: template,
   selectedObjectId: [],
 }
 
-export default editor;
+const clearTemplate: Template = {
+  id: "",
+  canvas: {
+    id: "",
+    blocks: [],
+    size: {
+      width: 0,
+      height: 0,
+    },
+    background: {
+      type: 'link',
+      data: '',
+    },
+  },
+}
+
+
+export {clearTemplate, newTemplate};

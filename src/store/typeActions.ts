@@ -1,20 +1,20 @@
-import {Editor} from "../type/type";
+import {Template} from "../type/type";
 
-export const CanvasActionType = {
-    CREATE_CANVAS: 'CREATE_CANVAS',
-    CLEAR_CANVAS: 'CLEAR_CANVAS',
+enum CanvasActionType {
+    CREATE_CANVAS = 'CREATE_CANVAS',
+    CLEAR_CANVAS = 'CLEAR_CANVAS',
 }
 
-type typeCreateCanvas = {
-    type: typeof CanvasActionType.CREATE_CANVAS;
-    payload: Editor;
+interface createNewCanvas {
+    type: CanvasActionType.CREATE_CANVAS;
+    payload: Template;
 }
 
-type typeClearCanvas = {
-    type: typeof CanvasActionType.CLEAR_CANVAS;
-    payload: Editor;
+interface clearCanvas {
+    type: CanvasActionType.CLEAR_CANVAS;
+    payload: Template;
 }
 
-type Action = typeCreateCanvas | typeClearCanvas
+type Action = createNewCanvas | clearCanvas
 
-export default Action
+export { CanvasActionType, type Action };
