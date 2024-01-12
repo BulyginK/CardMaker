@@ -1,15 +1,21 @@
 import React from "react";
 import css from "./Canvas.module.css";
-//import dbCanvas from "../../data/data";
 import TextBlock from "./TextBlock/TextBlock";
 import ImageBlock from "./ImageBlock/ImageBlock";
 import ArtObject from "./ArtObject/ArtObject";
-import {Editor} from "../../type/type";
-import {connect} from "react-redux";
+import { useSelector } from "react-redux";
+import { selectEditor } from "../../store/selectors";
 
 function Canvas() {
+    const state = useSelector(selectEditor);
+    let sizeCanvas = {
+        width: state.template.canvas.size.width,
+        height: state.template.canvas.size.height,
+    }
+    let blocks = state.template.canvas.blocks;
+
     return (
-        <div className={css.wrapper}>
+        <div className={css.wrapper} style={sizeCanvas}>
             <div>
                 {/*{*/}
                 {/*    //isSelected &&*/}
@@ -42,43 +48,36 @@ function Canvas() {
                 {/*    </>*/}
                 {/*)}*/}
 
-                {/*{dbCanvas.template.canvas.blocks.blocksType.map((block) => {*/}
-                {/*    switch (block.type) {*/}
-                {/*        case "image":*/}
-                {/*            return (*/}
-                {/*                <ImageBlock*/}
-                {/*                    key={block.id}*/}
-                {/*                    imageBlock={block}*/}
-                {/*                />*/}
-                {/*            );*/}
-                {/*        case "text":*/}
-                {/*            return (*/}
-                {/*                <TextBlock*/}
-                {/*                    key={block.id}*/}
-                {/*                    textBlock={block}*/}
-                {/*                />*/}
-                {/*            );*/}
-                {/*        case "art":*/}
-                {/*            return (*/}
-                {/*                <ArtObject*/}
-                {/*                    key={block.id}*/}
-                {/*                    artObject={block}*/}
-                {/*                />*/}
-                {/*            );*/}
-                {/*        default:*/}
-                {/*            return null;*/}
-                {/*    }*/}
-                {/*})}*/}
+                {blocks.map((block) => {
+                    switch (block.type) {
+                        case "image":
+                            return (
+                                <ImageBlock
+                                    key={block.id}
+                                    imageBlock={block}
+                                />
+                            );
+                        case "text":
+                            return (
+                                <TextBlock
+                                    key={block.id}
+                                    textBlock={block}
+                                />
+                            );
+                        case "art":
+                            return (
+                                <ArtObject
+                                    key={block.id}
+                                    artObject={block}
+                                />
+                            );
+                        default:
+                            return null;
+                    }
+                })}
             </div>
         </div>
     );
 }
 
-function mapStateToProps(state: Editor) {
-    return {
-        size: state.template.canvas.size
-    }
-}
-
-//export default Canvas;
-export default connect(mapStateToProps)(Canvas);
+export default Canvas;

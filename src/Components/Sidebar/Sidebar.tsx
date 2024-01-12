@@ -5,10 +5,7 @@ import SidebarItems from "../../data/SidebarItems";
 import SidebarItemOption from "./SidebarItemOption/SidebarItemOption";
 //import {SidebarItem} from "../../type/type";
 
-type SidebarItemsProps = {
-    canvasHandler: () => void;
-};
-const Sidebar = ({canvasHandler}: SidebarItemsProps) => {
+const Sidebar = () => {
     const [isShown, setIsShown] = useState(false);
     const [clickElem, setClickElem] = useState('');
 
@@ -34,7 +31,6 @@ const Sidebar = ({canvasHandler}: SidebarItemsProps) => {
             {isShown &&
                 <SidebarItemOption
                     item={clickElem}
-                    canvasHandler={canvasHandler}
                 />}
         </div>
 

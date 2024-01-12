@@ -1,4 +1,4 @@
 import { RootState } from "./store";
-import {Editor} from "../type/type";
+import { Editor } from "../type/type";
 
-export const selectEditor = (state: RootState) => state.editor as Editor;
+export const selectEditor = (state: RootState) => state.canvasReducer as Editor;

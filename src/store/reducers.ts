@@ -1,8 +1,7 @@
-import {combineReducers} from "redux";
-import {createCanvas} from '../actions'
-import {Editor} from "../type/type";
+import { combineReducers } from "redux";
+import { Editor } from "../type/type";
 import { CanvasActionType, Action} from "./typeActions"
-import {clearTemplate, newTemplate} from "../data/data";
+import { clearTemplate } from "../data/data";
 import canvas from "../Components/Canvas/Canvas";
 
 
@@ -17,12 +16,24 @@ const canvasReducer = (state: Editor = initialState, action: Action): Editor => 
                 ...state,
                 template: action.payload,
             }
+        case CanvasActionType.ADD_TEXT:
+            return {
+                ...state.template,
+                selectedObjectId: [],
+                template: {
+                    ...state.template,
+                    canvas: {
+                        ...state.template.canvas,
+                        blocks: [ ...state.template.canvas.blocks, action.payload ]
+                    }
+                }
+            }
         default:
             return state
     }
 }
 
 const rootReducer = combineReducers({
-    canvas: canvasReducer,
+    canvasReducer,
 })
-export {rootReducer}
+export default rootReducer

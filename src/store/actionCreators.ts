@@ -1,7 +1,5 @@
-import {Editor, Template} from "../type/type";
+import {Template, TextBlockType} from "../type/type";
 import { CanvasActionType } from "./typeActions";
-
-
 
 function createNewCanvas (payload: Template) {
     return {
@@ -10,6 +8,11 @@ function createNewCanvas (payload: Template) {
     }
 }
 
+function createNewText (payload: TextBlockType) {
+    return {
+        type: CanvasActionType.ADD_TEXT,
+        payload: payload
+    }
+}
 
-
-export {createNewCanvas}
+export {createNewCanvas, createNewText}

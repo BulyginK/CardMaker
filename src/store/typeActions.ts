@@ -1,8 +1,9 @@
-import {Template} from "../type/type";
+import {ArtObjectType, ImageBlockType, Template, TextBlockType} from "../type/type";
 
 enum CanvasActionType {
     CREATE_CANVAS = 'CREATE_CANVAS',
     CLEAR_CANVAS = 'CLEAR_CANVAS',
+    ADD_TEXT = 'ADD_TEXT'
 }
 
 interface createNewCanvas {
@@ -15,6 +16,14 @@ interface clearCanvas {
     payload: Template;
 }
 
-type Action = createNewCanvas | clearCanvas
+interface addText {
+    type: CanvasActionType.ADD_TEXT;
+    payload: TextBlockType;
+}
+
+type Action =
+    | createNewCanvas
+    | clearCanvas
+    | addText
 
 export { CanvasActionType, type Action };

@@ -9,13 +9,12 @@ import {SidebarItem} from "../../../type/type";
 
 type SidebarItemProps = {
     item: string,
-    canvasHandler: () => void;
 }
 function SidebarItemOption(props: SidebarItemProps) {
     switch (props.item) {
             case "Холст":
                 return (
-                    <CanvasOptions canvasHandler={canvasHandler}/>
+                    <CanvasOptions />
                 );
             case "Шаблоны":
                 return (

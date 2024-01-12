@@ -11,18 +11,9 @@ import {newTemplate} from "../../data/data";
 
 
 const Main = () => {
-    const editorModel = useSelector(selectEditor);
-    const {
-        createNewCanvas,
-    } = useAppActions();
-
-    const canvasHandler = () => {
-        createNewCanvas(newTemplate);
-    };
-
     return (
         <div className={css.wrapper}>
-            <Sidebar canvasHandler={canvasHandler}/>
+            <Sidebar />
             <Canvas />
             <CanvasBlocks />
         </div>

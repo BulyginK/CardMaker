@@ -232,5 +232,78 @@ const clearTemplate: Template = {
   },
 }
 
+const firstText1: TextBlockType =
+  {
+    id: 'id002',
+    size: {
+      height: 100,
+      width: 200,
+    },
+    position: {
+      top: 200,
+      left: 300,
+    },
+    // color: {
+    //   r: 0,
+    //   g: 0,
+    //   b: 0,
+    //   a: 0,
+    // },
+    fillColor: {
+      r: 0,
+      g: 0,
+      b: 0,
+      a: 0,
+    },
+    type: 'text',
+    value: 'Текст',
+    text: {
+      // textAlign: '',
+      fontSize: 25,
+      fontFamily: 'Roboto',
+      fontWeight: 800,
+      fontStyle: 'normal',
+      textDecoration: 'overline',
+      color: 'green',
+    }
+  }
 
-export {clearTemplate, newTemplate};
+const firstText2: TextBlockType =
+    {
+      id: 'id002',
+      size: {
+        height: 100,
+        width: 200,
+      },
+      position: {
+        top: 100,
+        left: 500,
+      },
+      // color: {
+      //   r: 0,
+      //   g: 0,
+      //   b: 0,
+      //   a: 0,
+      // },
+      fillColor: {
+        r: 0,
+        g: 0,
+        b: 0,
+        a: 0,
+      },
+      type: 'text',
+      value: 'Текст2',
+      text: {
+        // textAlign: '',
+        fontSize: 15,
+        fontFamily: 'Roboto',
+        fontWeight: 800,
+        fontStyle: 'normal',
+        textDecoration: 'none',
+        color: 'red',
+      }
+    }
+
+
+
+export {clearTemplate, newTemplate, firstText1, firstText2};

@@ -1,4 +1,4 @@
-import {rootReducer} from "./reducers";
+import rootReducer from "./reducers";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as EditorActionsCreator from "./actionCreators";

@@ -91,8 +91,6 @@ type SidebarItems = {
 }
 
 type Editor = {
-  //   history: History;
-  //   sidebarItems: SidebarItems;
   template: Template;
   selectedObjectId: string[]
 }
