@@ -1,4 +1,4 @@
-import {Template, TextBlockType} from "../type/type";
+import {ArtObjectType, ImageBlockType, Template, TextBlockType} from "../model/type";
 import { CanvasActionType } from "./typeActions";
 
 function createNewCanvas (payload: Template) {
@@ -8,11 +8,25 @@ function createNewCanvas (payload: Template) {
     }
 }
 
-function createNewText (payload: TextBlockType) {
+function createNewBlock (payload: TextBlockType | ImageBlockType | ArtObjectType) {
     return {
-        type: CanvasActionType.ADD_TEXT,
+        type: CanvasActionType.ADD_BLOCK,
         payload: payload
     }
 }
 
-export {createNewCanvas, createNewText}
+function changeTextFontFamily (payload: { blockId: string, newFontFamily: string }) {
+    return {
+        type: CanvasActionType.CHANGE_TEXT_FONT_FAMILY,
+        payload: payload
+    }
+}
+
+function getSelectedObjectId (blockId: string) {
+    return {
+        type: CanvasActionType.GET_SELECTED_BLOCK_ID,
+        payload: blockId
+    }
+}
+
+export {createNewCanvas, createNewBlock, changeTextFontFamily, getSelectedObjectId}

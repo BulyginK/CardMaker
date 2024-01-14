@@ -1,30 +1,33 @@
 import React from "react";
 import css from "./ListCanvasBlocks.module.css";
 import {useAppSelector} from "../../../data/hooks";
+import {useSelector} from "react-redux";
+import {selectEditor} from "../../../store/selectors";
 
 const ListCanvasBlocks = () => {
-  //const blocks = useAppSelector((state) => state.canvas);
+  const state = useSelector(selectEditor);
+  let blocks = state.template.canvas.blocks;
 
   return (
     <ul className={css.listwWrapper}>
-      {/*{canvasBlocks.blocksType.map((block) => {*/}
-      {/*  switch (block.type) {*/}
-      {/*    case "image":*/}
-      {/*        return (*/}
-      {/*          <p key={block.id} >{block.type} {block.id}</p>*/}
-      {/*        );*/}
-      {/*    case "text":*/}
-      {/*        return (*/}
-      {/*          <p key={block.id} >{block.type} {block.id} </p>*/}
-      {/*        );*/}
-      {/*    case "art":*/}
-      {/*      return (*/}
-      {/*        <p key={block.id} >{block.type} {block.id}</p>*/}
-      {/*      );*/}
-      {/*    default:*/}
-      {/*        return null;*/}
-      {/*}*/}
-      {/*})}*/}
+      {blocks.map((block) => {
+        switch (block.type) {
+          case "image":
+              return (
+                <p key={block.id} >{block.type} {block.id}</p>
+              );
+          case "text":
+              return (
+                <p key={block.id} >{block.type} {block.id} </p>
+              );
+          case "art":
+            return (
+              <p key={block.id} >{block.type} {block.id}</p>
+            );
+          default:
+              return null;
+      }
+      })}
     </ul>
   );
 }

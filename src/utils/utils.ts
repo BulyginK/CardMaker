@@ -1,4 +1,4 @@
-import {Template} from "../type/type";
+import {Template} from "../model/type";
 import {clearTemplate} from "../data/data";
 
 export function getInitialTemplate(): Template {

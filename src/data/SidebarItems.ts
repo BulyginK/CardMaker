@@ -1,6 +1,6 @@
 import {
   SidebarItem,
-} from '../type/type'
+} from '../model/type'
 
 const sidebarItems: Array<SidebarItem> = [
   {

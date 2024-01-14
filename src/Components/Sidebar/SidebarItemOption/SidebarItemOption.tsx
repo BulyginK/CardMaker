@@ -5,7 +5,7 @@ import TemplateOptions from './TemplateOptions/TemplateOptions';
 import TextOptions from './TextOptions/TextOptions';
 import ImageOptions from './ImageOptions/ImageOptions';
 import ArtObjectOptions from "./ArtObjectOptions/ArtObjectOptions";
-import {SidebarItem} from "../../../type/type";
+import {SidebarItem} from "../../../model/type";
 
 type SidebarItemProps = {
     item: string,

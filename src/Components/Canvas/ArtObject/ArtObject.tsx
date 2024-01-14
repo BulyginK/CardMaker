@@ -1,6 +1,6 @@
 import React from "react";
 import css from "./ArtObject.module.css";
-import { ArtObjectType } from "../../../type/type";
+import { ArtObjectType } from "../../../model/type";
 
 type artObjectProps = {
     artObject: ArtObjectType;

@@ -5,6 +5,8 @@ import ImageBlock from "./ImageBlock/ImageBlock";
 import ArtObject from "./ArtObject/ArtObject";
 import { useSelector } from "react-redux";
 import { selectEditor } from "../../store/selectors";
+import {getSelectedObjectId} from "../../store/actionCreators";
+import {useAppActions} from "../../store/hooks";
 
 function Canvas() {
     const state = useSelector(selectEditor);
@@ -13,6 +15,8 @@ function Canvas() {
         height: state.template.canvas.size.height,
     }
     let blocks = state.template.canvas.blocks;
+
+
 
     return (
         <div className={css.wrapper} style={sizeCanvas}>

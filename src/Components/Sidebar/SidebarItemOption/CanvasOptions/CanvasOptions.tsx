@@ -12,7 +12,7 @@ function CanvasOptions() {
     }
 
     function clearCanvas() {
-        let showCreatCanvas = window.confirm("Текущий холст будет удален. Вы подтверждаете удаление холста?");
+        let showCreatCanvas = window.confirm("Текущий холст будет очищен. Вы подтверждаете очистку холста?");
         if (showCreatCanvas) {
             createNewCanvas(newTemplate)
         }

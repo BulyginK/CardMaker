@@ -1,9 +1,10 @@
-import {ArtObjectType, ImageBlockType, Template, TextBlockType} from "../type/type";
+import {ArtObjectType, ImageBlockType, Template, TextBlockType} from "../model/type";
 
 enum CanvasActionType {
     CREATE_CANVAS = 'CREATE_CANVAS',
-    CLEAR_CANVAS = 'CLEAR_CANVAS',
-    ADD_TEXT = 'ADD_TEXT'
+    ADD_BLOCK = 'ADD_BLOCK',
+    CHANGE_TEXT_FONT_FAMILY = 'CHANGE_TEXT_FONT_FAMILY',
+    GET_SELECTED_BLOCK_ID = 'GET_SELECTED_BLOCK_ID'
 }
 
 interface createNewCanvas {
@@ -11,19 +12,28 @@ interface createNewCanvas {
     payload: Template;
 }
 
-interface clearCanvas {
-    type: CanvasActionType.CLEAR_CANVAS;
-    payload: Template;
+interface addBlock {
+    type: CanvasActionType.ADD_BLOCK;
+    payload: TextBlockType | ImageBlockType | ArtObjectType;
 }
 
-interface addText {
-    type: CanvasActionType.ADD_TEXT;
-    payload: TextBlockType;
+interface changeTextFontFamily {
+    type: CanvasActionType.CHANGE_TEXT_FONT_FAMILY;
+    payload: {
+        blockId: string;
+        newFontFamily: string;
+    };
+}
+
+interface getSelectedObjectId {
+    type: CanvasActionType.GET_SELECTED_BLOCK_ID;
+    payload: string;
 }
 
 type Action =
     | createNewCanvas
-    | clearCanvas
-    | addText
+    | addBlock
+    | changeTextFontFamily
+    | getSelectedObjectId
 
 export { CanvasActionType, type Action };

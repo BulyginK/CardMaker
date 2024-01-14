@@ -1,9 +1,7 @@
 import React, {useState} from 'react';
 import css from "./Sidebar.module.css"
 import SidebarItems from "../../data/SidebarItems";
-//import ListSidebarItems from "./ListSidebarItems/ListSidebarItems"
 import SidebarItemOption from "./SidebarItemOption/SidebarItemOption";
-//import {SidebarItem} from "../../type/type";
 
 const Sidebar = () => {
     const [isShown, setIsShown] = useState(false);
