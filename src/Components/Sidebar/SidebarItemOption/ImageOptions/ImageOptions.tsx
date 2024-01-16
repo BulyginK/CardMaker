@@ -1,13 +1,12 @@
-import React from 'react';
+import React from "react";
 import css from "./ImageOptions.module.css";
 
-
 function ImageOptions() {
-    return (
-        <div className={css.wrapper}>
-            <button>Добавить картинку</button>
-        </div>
-    );
+  return (
+    <div className={css.wrapper}>
+      <button>Добавить картинку</button>
+    </div>
+  );
 }
 
-export default ImageOptions
+export default ImageOptions;

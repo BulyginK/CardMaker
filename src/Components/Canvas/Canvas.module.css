@@ -37,27 +37,50 @@
     position: absolute;
 }
 
-/*.top-center {*/
-/*    cursor: ns-resize;*/
-/*    top: -5px;*/
-/*    left: 50%;*/
-/*    transform: translateX(-50%);*/
-/*}*/
-/*.right-center {*/
-/*    cursor: ew-resize;*/
-/*    right: -5px;*/
-/*    top: 50%;*/
-/*    transform: translateY(-50%);*/
-/*}*/
-/*.bottom-center {*/
-/*    cursor: ns-resize;*/
-/*    bottom: -5px;*/
-/*    left: 50%;*/
-/*    transform: translateX(-50%);*/
-/*}*/
-/*.left-center {*/
-/*    cursor: ew-resize;*/
-/*    left: -5px;*/
-/*    top: 50%;*/
-/*    transform: translateY(-50%);*/
-/*}*/
+/* .top-center { */
+
+/*    cursor: ns-resize; */
+
+/*    top: -5px; */
+
+/*    left: 50%; */
+
+/*    transform: translateX(-50%); */
+
+/* } */
+
+/* .right-center { */
+
+/*    cursor: ew-resize; */
+
+/*    right: -5px; */
+
+/*    top: 50%; */
+
+/*    transform: translateY(-50%); */
+
+/* } */
+
+/* .bottom-center { */
+
+/*    cursor: ns-resize; */
+
+/*    bottom: -5px; */
+
+/*    left: 50%; */
+
+/*    transform: translateX(-50%); */
+
+/* } */
+
+/* .left-center { */
+
+/*    cursor: ew-resize; */
+
+/*    left: -5px; */
+
+/*    top: 50%; */
+
+/*    transform: translateY(-50%); */
+
+/* } */

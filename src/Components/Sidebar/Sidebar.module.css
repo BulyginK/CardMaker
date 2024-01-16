@@ -1,13 +1,14 @@
 .sidebar {
     display: flex;
 }
+
 .wrapper {
     width: 70px;
     height: 90vh;
     padding: 10px;
     margin: 5px;
     border-radius: 5px;
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
 .wrapper_items {
