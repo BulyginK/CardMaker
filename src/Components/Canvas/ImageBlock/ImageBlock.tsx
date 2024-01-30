@@ -10,9 +10,10 @@ type imageBlockProps = {
 function ImageBlock({ imageBlock }: imageBlockProps) {
   const { getSelectedObjectId } = useAppActions();
 
-  const getObjectId = (e: any) => {
-    console.log(e.target);
-    getSelectedObjectId(e.target.id);
+  const getObjectId = (event: React.MouseEvent) => {
+    const eventTarget = event.target as HTMLElement;
+    const parentElementId = eventTarget.parentElement?.id;
+    if (parentElementId) getSelectedObjectId(parentElementId);
   };
 
   return (

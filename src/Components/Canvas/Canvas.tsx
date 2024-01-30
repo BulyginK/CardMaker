@@ -16,51 +16,26 @@ function Canvas() {
 
   return (
     <div className={css.wrapper} style={sizeCanvas}>
-      <div>
-        {/*{*/}
-        {/*    //isSelected &&*/}
-        {/*    (*/}
-        {/*    <>*/}
-        {/*        <div*/}
-        {/*            className={*/}
-        {/*                css["top-left"] + " " + css.resize*/}
-        {/*            }*/}
-        {/*        />*/}
-
-        {/*        <div*/}
-        {/*            className={*/}
-        {/*                css["top-right"] + " " + css.resize*/}
-        {/*            }*/}
-        {/*        />*/}
-
-        {/*        <div*/}
-        {/*            className={*/}
-        {/*                css["bottom-right"] + " " + css.resize*/}
-        {/*            }*/}
-        {/*        />*/}
-
-        {/*        <div*/}
-        {/*            className={*/}
-        {/*                css["bottom-left"] + " " + css.resize*/}
-        {/*            }*/}
-        {/*        />*/}
-
-        {/*    </>*/}
-        {/*)}*/}
-
         {blocks.map((block) => {
+          const isBlockSelected = state.selectedObjectId.includes(block.id);
+
           switch (block.type) {
             case "image":
               return <ImageBlock key={block.id} imageBlock={block} />;
             case "text":
-              return <TextBlock key={block.id} textBlock={block} />;
+              return (
+                <TextBlock
+                  key={block.id}
+                  textBlock={block}
+                  isSelected={isBlockSelected}
+                />
+              );
             case "art":
               return <ArtObject key={block.id} artObject={block} />;
             default:
               return null;
           }
         })}
-      </div>
     </div>
   );
 }

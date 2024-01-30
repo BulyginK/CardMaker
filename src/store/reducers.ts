@@ -59,7 +59,7 @@ const canvasReducer = (
       return {
         ...state,
         selectedObjectId: action.payload.selectedObjectId,
-        template: action.payload.template
+        template: action.payload.template,
       };
     default:
       return state;

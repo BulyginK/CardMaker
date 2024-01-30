@@ -6,11 +6,14 @@ const fontFamilyUsed = ["Pacifico", "Roboto", "Open Sans", "Lemon"];
 function TextOptionsSelect() {
   const { changeTextFontFamily } = useAppActions();
 
-  const changeFontFamily = (e: any) => {
-    fontFamilyUsed.map((fontFamily) => {
-      if (e.target.innerText == fontFamily)
-        changeTextFontFamily({ blockId: "id003", newFontFamily: fontFamily });
-    });
+  const changeFontFamily = (event: React.MouseEvent) => {
+    const eventTarget = event.target as HTMLElement;
+    const parentElementInnerText = eventTarget.textContent;
+
+      fontFamilyUsed.map((fontFamily) => {
+        if (parentElementInnerText == fontFamily)
+          changeTextFontFamily({ blockId: "id003", newFontFamily: fontFamily });
+      });
   };
 
   return (

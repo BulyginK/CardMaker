@@ -7,10 +7,12 @@ const Sidebar = () => {
   const [isShown, setIsShown] = useState(false);
   const [clickElem, setClickElem] = useState("");
 
-  const getItemAlt = (e: any) => {
-    e.preventDefault();
-    e.target.alt != clickElem ? setIsShown(true) : setIsShown(!isShown);
-    setClickElem(e.target.alt);
+  const getItemAlt = (event: React.MouseEvent) => {
+    event.preventDefault();
+    const eventTarget = event.target as HTMLElement;
+    const altOfElement = eventTarget.parentElement?.innerText;
+    altOfElement != clickElem ? setIsShown(true) : setIsShown(!isShown);
+    if (altOfElement) setClickElem(altOfElement);
   };
 
   const sidebarItems = SidebarItems.map((item) => (
