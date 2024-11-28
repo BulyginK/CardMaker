@@ -1,19 +1,16 @@
 import React from "react";
-import css from "./ArtObject.module.css";
 import { ArtObjectType } from "../../../model/type";
 
 type artObjectProps = {
-    artObject: ArtObjectType;
+  artObject: ArtObjectType;
 };
 
-function TextBlock({artObject} : artObjectProps) {
-    return (
-        <div id={artObject.id}>
-            <p>
-
-            </p>
-        </div>
-    );
+function TextBlock({ artObject }: artObjectProps) {
+  return (
+    <div id={artObject.id}>
+      <p></p>
+    </div>
+  );
 }
 
 export default TextBlock;

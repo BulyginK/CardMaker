@@ -8,13 +8,13 @@ type RootState = ReturnType<typeof rootReducer>;
 const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 const useAppActions = () => {
-    const dispatch = useDispatch();
-    return bindActionCreators(
-        {
-            ...EditorActionsCreator,
-        },
-        dispatch,
-    );
+  const dispatch = useDispatch();
+  return bindActionCreators(
+    {
+      ...EditorActionsCreator,
+    },
+    dispatch,
+  );
 };
 
 export { useAppSelector, useAppActions };

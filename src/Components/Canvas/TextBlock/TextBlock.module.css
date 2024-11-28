@@ -1,19 +1,24 @@
+.text_wrapper {
+  position: relative;
+}
+
 .text {
-    position: absolute;
-    box-sizing: content-box;
+  position: absolute;
+  box-sizing: content-box;
 }
 
-.text p {
-    position: absolute;
+.textarea {
+  background: none;
+  outline: none;
+  overflow: hidden;
+  border: none;
+  width: 100%;
+  height: 100%;
+  resize: none;
+  padding: 2px 0 0 3px;
 }
 
-.textarea{
-    background: none;
-    outline: none;
-    overflow: hidden;
-    border: none;
-    width: 100%;
-    height: 100%;
-    resize: none;
-    padding: 2px 0 0 3px;
+.border {
+  border: 2px solid dimgrey;
 }
+
